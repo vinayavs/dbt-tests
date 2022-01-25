@@ -10,16 +10,16 @@
 
 
 
-{{ config(materialized='table', alias='first_model') }}
-
+{{ config(materialized='table', alias='first_model', tags=["nightly","demo"] ) }}
+-- , post_hook='grant select on {{this}} to role analyst'
 
 with source_data as (
 
-    select 1 as id
+    select 1 as id, 'TX' as state, '2020-03-01 00:03:00.000'::timestamp as updated_at
     union all
-    select null as id
+    select null as id, 'CT' as state, '2020-01-01 00:00:00.000'::timestamp as updated_at
     union all
-    select 3 as id
+    select 3 as id, 'VT' as state, '2020-01-01 00:00:00.000'::timestamp as updated_at
     -- select 1 as id
 
 )
