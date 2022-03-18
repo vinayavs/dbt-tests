@@ -1,4 +1,5 @@
 import datetime
+import shutil
 from prefect import Flow
 from prefect.tasks.dbt import DbtShellTask
 from prefect.schedules import IntervalSchedule
@@ -24,7 +25,7 @@ def build_flow(schedule=None):
         'client_session_keep_alive': False
             },
             overwrite_profiles=True,
-            profiles_dir=r"/home/vagrant/.dbt/"
+            profiles_dir=r"/root/.dbt/"
         )(command='dbt run --models example.my_first_dbt_model')
     return flow
 
