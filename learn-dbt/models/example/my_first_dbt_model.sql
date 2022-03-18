@@ -15,7 +15,7 @@
 
 with source_data as (
 
-    select 1 as id, 'TX' as state, '2022-01-01 00:00:00.000'::timestamp as updated_at
+    select 1 as id, 'TX' as state, '2022-02-01 00:10:00.000'::timestamp as updated_at
     union all
     select null as id, 'CT' as state, '2022-01-01 00:00:00.000'::timestamp as updated_at
     union all

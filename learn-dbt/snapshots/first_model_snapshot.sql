@@ -2,7 +2,7 @@
 
 {{
     config(
-      target_database='analytics',
+      target_database='test_db',
       target_schema='snapshots',
       unique_key='id',
 
