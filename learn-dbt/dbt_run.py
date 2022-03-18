@@ -11,18 +11,17 @@ def build_flow(schedule=None):
             profile_name='learn-dbt',
             environment='dev',
             dbt_kwargs={
-        'type': 'snowflake',
-        'account': 'nr96745.ap-south-1.aws',
-
-        # User/password auth
-        'user': 'vinssitsol',
-        'password': 'Applmgr@11',
-        'role': 'ACCOUNTADMIN',
-        'database': 'analytics',
-        'warehouse': 'transform_wh',
-        'schema': 'dbt',
-        'threads': 1,
-        'client_session_keep_alive': False
+                'type': 'snowflake',
+                'account': 'nr96745.ap-south-1.aws',
+                # User/password auth
+                'user': 'vinssitsol',
+                'password': 'Applmgr@11',
+                'role': 'ACCOUNTADMIN',
+                'database': 'analytics',
+                'warehouse': 'transform_wh',
+                'schema': 'dbt',
+                'threads': 1,
+                'client_session_keep_alive': False
             },
             overwrite_profiles=True,
             profiles_dir=r"/root/.dbt/"
